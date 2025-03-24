@@ -11,4 +11,5 @@ def sayHello(request):
     # Pull data from db
     # Transform
     # Send email
-    return HttpResponse("Hello World")
+    # return HttpResponse("Hello World")
+    return render(request, "hello.html", {"name": "MAK8405"})
