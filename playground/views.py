@@ -7,9 +7,16 @@ from django.http import HttpResponse
 # action
 
 
+def calculate():
+    x = 1
+    y = 2
+    return x
+
+
 def sayHello(request):
     # Pull data from db
     # Transform
     # Send email
     # return HttpResponse("Hello World")
+    x = calculate()
     return render(request, "hello.html", {"name": "MAK8405"})
