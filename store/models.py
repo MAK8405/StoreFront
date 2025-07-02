@@ -6,7 +6,7 @@ from django.db import models
 class Product(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
-    price = models.DecimalField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
     inventory = models.IntegerField()
     last_update = models.DateTimeField(auto_now_add=True)
 
@@ -23,12 +23,12 @@ class Customer(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     email = models.EmailField(unique=True)
-    phone = models.BigIntegerField(max_length=255)
+    phone = models.BigIntegerField()
     birth_date = models.DateField(auto_now_add=True)
     membership = models.CharField(max_length=1, choices=MEMBERSHIP_CHOICES, default="B")
 
 
-class Order(models.Models):
+class Order(models.Model):
     PAYMENT_STATUS_PENDING = "P"
     PAYMENT_STATUS_COMPLETE = "C"
     PAYMENT_STATUS_FAILED = "F"
