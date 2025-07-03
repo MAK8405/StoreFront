@@ -35,3 +35,4 @@ local_settings.py
 # macOS & Linux system files
 .DS_Store
 *.swp
+Where.txt
