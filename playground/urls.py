@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path  # Path function
 from . import views
 
 # URLConf
