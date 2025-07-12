@@ -20,6 +20,7 @@ class Customer(models.Model):
         (MEMBERSHIP_SILVER, "Silver"),
         (MEMBERSHIP_GOLD, "Gold"),
     ]
+    # sku = models.CharField(max_length= 10, primary_key= True) => If we don't want Django automatically create a primary key
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     email = models.EmailField(unique=True)
