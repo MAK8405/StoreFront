@@ -26,7 +26,9 @@ class Customer(models.Model):
     email = models.EmailField(unique=True)
     phone = models.BigIntegerField()
     birth_date = models.DateField(auto_now_add=True)
-    membership = models.CharField(max_length=1, choices=MEMBERSHIP_CHOICES, default="B")
+    membership = models.CharField(
+        max_length=1, choices=MEMBERSHIP_CHOICES, default=MEMBERSHIP_BRONZE
+    )
 
 
 class Order(models.Model):
