@@ -1,6 +1,10 @@
 from django.db import models
 
-# Create your models here.
+
+class Promotion(models.Model):
+    description = models.CharField(max_length=255)
+    discount = models.FloatField()
+    # products
 
 
 class Collection(models.Model):
@@ -16,6 +20,7 @@ class Product(models.Model):
     collection = models.ForeignKey(
         "Collection", on_delete=models.PROTECT
     )  # it should be on PROTECT because if we accidentally delete a collection we don't end up deleting all the products in that collection
+    promotions = models.ManyToManyField(Promotion)
 
 
 class Customer(models.Model):
