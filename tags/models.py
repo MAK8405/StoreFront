@@ -11,4 +11,4 @@ class TaggedItem(models.Model):
     tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
     # Type (product, video, article)
     # ID
-    product = models.ForeignKey(ContentType)
+    product = models.ForeignKey(ContentType, on_delete=models.CASCADE)
